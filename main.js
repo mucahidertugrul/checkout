@@ -1,5 +1,3 @@
-// shipping 1$
-// tax*%18
 let decreaseButton=document.querySelectorAll('.decrease');
 console.log('decreaseButton',decreaseButton)
 
@@ -24,7 +22,6 @@ increaseButton.forEach((item)=>{
         let productTotal = item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText
         productTotal=productTotal.slice(1)
         console.log('productTotal => ',productTotal)
-        // subtotal
     } )
 })
 
@@ -48,5 +45,33 @@ decreaseButton.forEach((item) => {
     })
 })
 
+removeButton.forEach((item) => {
+    item.addEventListener( 'click' , () => {
+        let cancel = 0
+        console.log('cancel => ' , cancel)
+        let price = item.parentElement.nextElementSibling.children [1].innerText
+        price = price.slice(1) 
+        console.log('price => ' , price)
+        let result = item.parentElement.nextElementSibling.children [0]
+        result = cancel * price 
+        console.log('result => ' , result)
+        item.parentElement.nextElementSibling.children[1].innerText = '$' + result
+        productTotal = item.parentElement.nextElementSibling.children[1].innerText
+        productTotal = productTotal.slice(1)
+        console.log('productTotal => ' , productTotal)
+        item.parentElement.previousElementSibling.children [1].innerText = result
+        count = item.parentElement.previousElementSibling.children [1].innerText
+        count = count
+        console.log('count => ' , count)
+         
+    } )
+} )
+
+
 
 // decrease btn
+// remove btn
+// subtotal
+
+// shipping 1$
+// tax*%18
