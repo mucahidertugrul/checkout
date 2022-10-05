@@ -22,11 +22,31 @@ increaseButton.forEach((item)=>{
         console.log('total => ' , total)
         item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText = '$' + total
         let productTotal = item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText
-        
         productTotal=productTotal.slice(1)
         console.log('productTotal => ',productTotal)
         // subtotal
     } )
 })
+
+decreaseButton.forEach((item) => {
+    item.addEventListener( 'click', () => {
+        let count = item.nextElementSibling.innerText
+        if (count > 0) {
+            count--
+            item.nextElementSibling.innerText = count
+        }
+        console.log('count => ' , count)
+        let price = item.parentElement.previousElementSibling.children[0].innerText
+        price = price.slice(2)
+        console.log('price => ' , price)
+        let total = price * count
+        console.log('total => ' , total)
+        item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText = '$' + total
+        let productTotal = item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText
+        productTotal = productTotal.slice(1)
+        console.log('productTotal => ' , productTotal)
+    })
+})
+
 
 // decrease btn
