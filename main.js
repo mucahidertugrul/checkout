@@ -28,7 +28,7 @@ increaseButton.forEach((item)=>{
         document.querySelector('.one').children[1].innerText = subTotal.toFixed(2) + '$' 
         let withTax = document.querySelector('.two').children[1].innerText.slice(0,-1)
         console.log('withTax => ' , withTax)
-        withTax = subTotal * (1.18)
+        withTax = subTotal * (0.18)
         document.querySelector('.two').children[1].innerText = withTax.toFixed(2)+ '$' 
     } )
 })
@@ -46,7 +46,7 @@ decreaseButton.forEach((item) => {
         console.log('price => ' , price)
         let total = price * count
         console.log('total => ' , total)
-        item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText = '$' + total
+        item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText = '$' + total.toFixed(2)
         let productTotal = item.parentElement.nextElementSibling.nextElementSibling.children[1].innerText
         productTotal = productTotal.slice(1)
         console.log('productTotal => ' , productTotal)
@@ -56,7 +56,7 @@ decreaseButton.forEach((item) => {
         document.querySelector('.one').children[1].innerText = subTotal.toFixed(2) + '$'
         let withTax = document.querySelector('.two').children[1].innerText.slice(0,-1)
         console.log('withTax => ' , withTax)
-        withTax = subTotal * (1.18)
+        withTax = subTotal * (0.18)
         document.querySelector('.two').children[1].innerText = withTax.toFixed(2)+ '$' 
     })
 })
@@ -82,6 +82,10 @@ removeButton.forEach((item) => {
         item.parentElement.previousElementSibling.children [1].innerText = result
         count = item.parentElement.previousElementSibling.children [1].innerText
         console.log('count => ' , count)
+        let withTax = document.querySelector('.two').children[1].innerText.slice(0,-1)
+        console.log('withTax => ' , withTax)
+        withTax = result
+        document.querySelector('.two').children[1].innerText = withTax.toFixed(2)+ '$' 
     } )
 } )
 
