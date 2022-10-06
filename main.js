@@ -26,6 +26,10 @@ increaseButton.forEach((item)=>{
         console.log('subTotal => ' , subTotal)
         subTotal = parseFloat(subTotal) + parseFloat(price)
         document.querySelector('.one').children[1].innerText = subTotal.toFixed(2) + '$' 
+        let withTax = document.querySelector('.two').children[1].innerText.slice(0,-1)
+        console.log('withTax => ' , withTax)
+        withTax = subTotal * (1.18)
+        document.querySelector('.two').children[1].innerText = withTax.toFixed(2)+ '$' 
     } )
 })
 
@@ -50,6 +54,10 @@ decreaseButton.forEach((item) => {
         console.log('subTotal => ' , subTotal)
         subTotal = parseFloat(subTotal) - parseFloat(price)
         document.querySelector('.one').children[1].innerText = subTotal.toFixed(2) + '$'
+        let withTax = document.querySelector('.two').children[1].innerText.slice(0,-1)
+        console.log('withTax => ' , withTax)
+        withTax = subTotal * (1.18)
+        document.querySelector('.two').children[1].innerText = withTax.toFixed(2)+ '$' 
     })
 })
 
